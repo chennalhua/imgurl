@@ -182,9 +182,15 @@ export default function Page() {
             console.log(error);
         });
     }, [])
+
+    const loginOut = (e) => {
+        e.preventDefault();
+        liff.logout();
+    }
     return (
         <div>
-            xxx
+            xxx<br/>
+            <button onClick={e => loginOut(e)}>登出</button>
             {/* <button onClick={share}>分享</button> */}
         </div>
     )
