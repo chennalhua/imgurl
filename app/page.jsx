@@ -13,6 +13,10 @@ export default function Page() {
             } else {
                 liff.sendMessages([
                     {
+                        type: 'text',
+                        text: 'Hello, World!'
+                    },
+                    {
                         "type": "bubble",
                         "hero": {
                             "type": "image",
@@ -180,7 +184,7 @@ export default function Page() {
     }, [])
     return (
         <div>
-            xxx-test-card
+            xxx
             {/* <button onClick={share}>分享</button> */}
         </div>
     )
