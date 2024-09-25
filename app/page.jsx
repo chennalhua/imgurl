@@ -180,7 +180,7 @@ export default function Page() {
     }, [])
     return (
         <div>
-            xxx
+            xxx-test-card
             {/* <button onClick={share}>分享</button> */}
         </div>
     )
