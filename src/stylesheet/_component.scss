@@ -1,0 +1,129 @@
+.personal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.user-image-box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    .user-image {
+        overflow: hidden;
+        border-radius: 50%;
+    }
+    &::after {
+        content: "";
+        width: 110px;
+        height: 110px;
+        border: 1px solid white;
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.project-item-button {
+    overflow: hidden;
+    border-radius: 22px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.3s;
+    position: relative;
+    height: 90px;
+    @include view-md {
+        height: 70px;
+    }
+    & > div {
+        height: 100%;
+    }
+    &::after {
+        content: "\e5cc";
+        font-family: "Material Symbols Outlined";
+        color: white;
+        font-size: 26px;
+        opacity: 0;
+    }
+    &:hover {
+        box-shadow: 0 0 5px rgba(67, 67, 67, 0.9);
+        &::after {
+            opacity: 1;
+            position: absolute;
+            top: 30%;
+            right: 30px;
+            transform: translateY(-50%);
+            animation: horizontalMove 2s infinite !important;
+            @include view-sm {
+                opacity: 0;
+            }
+        }
+    }
+    .logo-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        background: white;
+        margin: 0 20px;
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+//* Loading
+.loading {
+    &-wrap {
+        background-color: rgba(24, 24, 24, 0.6);
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+    &-block {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            aspect-ratio: 1;
+            --_c: no-repeat radial-gradient(farthest-side, #f4f4f4 90%, #0000);
+            background:
+                var(--_c) top,
+                var(--_c) left,
+                var(--_c) right,
+                var(--_c) bottom;
+            background-size: 11px 11px;
+            text-align: center;
+            animation: run 1s infinite;
+            @keyframes run {
+                to {
+                    transform: rotate(0.5turn);
+                }
+            }
+        }
+        &::after {
+            content: attr(data-tip);
+            color: #fff;
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            position: absolute;
+            left: 64%;
+            transform: translateX(-50%);
+        }
+    }
+}

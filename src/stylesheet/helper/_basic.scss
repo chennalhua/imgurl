@@ -1,0 +1,120 @@
+// *,
+// *::before,
+// *::after {
+//     box-sizing: border-box;
+//     font-family:
+//         "Roboto",
+//         "Noto Sans TC",
+//         system-ui,
+//         -apple-system,
+//         "BlinkMacSystemFont",
+//         sans-serif !important;
+// }
+
+body,
+html,
+span {
+    font-weight: 600 !important;
+}
+
+body {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+input {
+    border-width: 1.5px !important;
+}
+
+a {
+    cursor: pointer;
+}
+
+//* scroll bar
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+//* 滿版 90 高度 scroll
+.full-box-scroll {
+    height: 95vh;
+    overflow-y: scroll;
+    @include view-xxl {
+        height: 90vh;
+    }
+}
+
+//* img RWD
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+//* 模板
+.template {
+    position: relative;
+    //-- 版型 -- 左(小)右(大)
+    &.basic { //.template-basic
+        display: flex;
+        @include view-md {
+            display: block;
+        }
+        &.active {
+            transition: all 0.3s linear;
+            .basic-small-box {
+                display: block;
+                @include view-md {
+                    width: 45%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                @include view-sm {
+                    width: 60%;
+                }
+            }
+            .basic-big-box {
+                width: 100%;
+            }
+        }
+        &.close {
+            transition: all 0.3s linear;
+            .basic-small-box {
+                display: none;
+            }
+            .basic-big-box {
+                width: 100%;
+            }
+        }
+        .basic-small-box {
+            width: 25%;
+            z-index: 3;
+        }
+        .basic-big-box {
+            width: 75%;
+            @include view-md {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+//RWD media 由小寫到大
+@mixin view-max {
+    @media (max-width: 1920px) {
+        @content;
+    }
+}
+@mixin view-xxl {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+@mixin view-xl {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+@mixin view-lg {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+@mixin view-md {
+    @media (max-width: 768px){
+        @content;
+    }
+}
+@mixin view-sm {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+@mixin view-xs {
+    @media (max-width: 414px) {
+        @content;
+    }
+}
+@mixin view-xxs {
+    @media (max-width: 390px) {
+        @content;
+    }
+}

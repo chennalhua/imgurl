@@ -1,0 +1,17 @@
+.bg {
+    &-GOGOBO,
+    &-gogobo {
+        background: linear-gradient(rgba(16, 122, 71, 0.7), rgb(16, 122, 71, 0.9));
+    }
+    &-iSmart,
+    &-ismart {
+        background: linear-gradient(rgba(185, 123, 8, 0.7), rgb(107, 70, 0, 0.9));
+    }
+    &-mAgent,
+    &-magent {
+        background: linear-gradient(rgba(72, 98, 137, 0.7), rgb(72, 98, 137, 0.9));
+    }
+    &-test {
+        background: linear-gradient(rgba(95, 72, 137, 0.7), rgba(103, 72, 137, 0.9));
+    }
+}
