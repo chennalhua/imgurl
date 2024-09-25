@@ -1,6 +1,4 @@
-import Provider from '@/src/auth/Provider';
 import { Inter } from 'next/font/google'
-import { AntdRegistry } from '@ant-design/nextjs-registry';
 import '@/src/stylesheet/all.scss';
 
 const inter = Inter({ subsets: ['latin'] })
