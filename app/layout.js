@@ -11,6 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="zh-TW">
+      <head>
+        <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+      </head>
       <body className={inter.className}>
         {children}
       </body>
